@@ -1,0 +1,322 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------
+   THEME TOKENS (Tailwind v4 style)
+   - Works with shadcn-style CSS vars (bg-background, text-foreground, etc.)
+   - Includes extra gradient tokens + utility classes
+------------------------------------------------------------- */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Gradient tokens (colors, not actual gradients) */
+  --color-g-midnight-1: var(--g-midnight-1);
+  --color-g-midnight-2: var(--g-midnight-2);
+  --color-g-midnight-3: var(--g-midnight-3);
+
+  --color-g-cyan-1: var(--g-cyan-1);
+  --color-g-cyan-2: var(--g-cyan-2);
+  --color-g-cyan-3: var(--g-cyan-3);
+
+  --color-g-purple-1: var(--g-purple-1);
+  --color-g-purple-2: var(--g-purple-2);
+  --color-g-purple-3: var(--g-purple-3);
+
+  --color-g-glass-1: var(--g-glass-1);
+  --color-g-glass-2: var(--g-glass-2);
+
+  /* Optional glow color */
+  --color-glow: var(--glow);
+}
+/* ------------------------------------------------------------
+   LIGHT MODE (Graphite + Ice, crisp contrast)
+------------------------------------------------------------- */
+:root {
+  --radius: 0.75rem;
+
+  /* Core surfaces */
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.16 0.01 260);
+
+  --card: oklch(0.995 0 0);
+  --card-foreground: oklch(0.16 0.01 260);
+
+  --popover: oklch(0.995 0 0);
+  --popover-foreground: oklch(0.16 0.01 260);
+
+  /* Accent (Ice / Cyan) */
+  --primary: oklch(0.66 0.16 205);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Neutrals */
+  --secondary: oklch(0.965 0 0);
+  --secondary-foreground: oklch(0.23 0.01 260);
+
+  --muted: oklch(0.965 0 0);
+  --muted-foreground: oklch(0.46 0.01 260);
+
+  --accent: oklch(0.93 0.04 205); /* soft ice tint */
+  --accent-foreground: oklch(0.2 0.01 260);
+
+  --destructive: oklch(0.62 0.22 25);
+
+  /* Borders / inputs (clearer) */
+  --border: oklch(0.88 0 0);
+  --input: oklch(0.88 0 0);
+  --ring: oklch(0.66 0.09 205);
+
+  /* Charts */
+  --chart-1: oklch(0.66 0.16 205);
+  --chart-2: oklch(0.7 0.14 145);
+  --chart-3: oklch(0.64 0.1 260);
+  --chart-4: oklch(0.76 0.14 90);
+  --chart-5: oklch(0.7 0.16 35);
+
+  /* Sidebar */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.16 0.01 260);
+  --sidebar-primary: oklch(0.66 0.16 205);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.965 0 0);
+  --sidebar-accent-foreground: oklch(0.23 0.01 260);
+  --sidebar-border: oklch(0.88 0 0);
+  --sidebar-ring: oklch(0.66 0.09 205);
+
+  /* Gradients (LIGHT): mostly neutral, tiny ice edge */
+  --g-midnight-1: #ffffff;
+  --g-midnight-2: #f6f7fb;
+  --g-midnight-3: #eef1f7;
+
+  --g-cyan-1: #06b6d4;
+  --g-cyan-2: #22d3ee;
+  --g-cyan-3: #a5f3fc;
+
+  /* Keep these vars for your existing utility name */
+  --g-purple-1: #0b0f19; /* graphite, not purple */
+  --g-purple-2: #0f172a;
+  --g-purple-3: #111827;
+
+  --g-glass-1: rgba(2, 6, 23, 0.06);
+  --g-glass-2: rgba(2, 6, 23, 0.02);
+
+  --glow: rgba(34, 211, 238, 0.18);
+}
+
+/* ------------------------------------------------------------
+   DARK MODE (True graphite, premium contrast)
+------------------------------------------------------------- */
+.dark {
+  /* Core surfaces */
+  --background: #070a10; /* near-black graphite */
+  --foreground: #f3f6ff; /* crisp white */
+
+  --card: #0b1020; /* deep slate */
+  --card-foreground: #f3f6ff;
+
+  --popover: #0b1020;
+  --popover-foreground: #f3f6ff;
+
+  /* Accent (Ice / Cyan) */
+  --primary: #22d3ee;
+  --primary-foreground: #041014;
+
+  --secondary: #0a1226;
+  --secondary-foreground: #f3f6ff;
+
+  --muted: #0a1226;
+  --muted-foreground: #aab4d6; /* readable muted */
+
+  --accent: #06b6d4;
+  --accent-foreground: #041014;
+
+  --destructive: #ef4444;
+
+  /* Borders / inputs (actually visible, not noisy) */
+  --border: rgba(243, 246, 255, 0.14);
+  --input: rgba(243, 246, 255, 0.18);
+  --ring: rgba(34, 211, 238, 0.45);
+
+  /* Charts */
+  --chart-1: #22d3ee;
+  --chart-2: #34d399;
+  --chart-3: #60a5fa;
+  --chart-4: #f59e0b;
+  --chart-5: #f97316;
+
+  /* Sidebar */
+  --sidebar: #0b1020;
+  --sidebar-foreground: #f3f6ff;
+  --sidebar-primary: #22d3ee;
+  --sidebar-primary-foreground: #041014;
+  --sidebar-accent: #0a1226;
+  --sidebar-accent-foreground: #f3f6ff;
+  --sidebar-border: rgba(243, 246, 255, 0.14);
+  --sidebar-ring: rgba(34, 211, 238, 0.45);
+
+  /* Gradients (DARK): subtle depth, controlled ice */
+  --g-midnight-1: #070a10;
+  --g-midnight-2: #0b1020;
+  --g-midnight-3: #101a33;
+
+  --g-cyan-1: #06b6d4;
+  --g-cyan-2: #22d3ee;
+  --g-cyan-3: #67e8f9;
+
+  /* still used by your bg-grad-purple util */
+  --g-purple-1: #05070c;
+  --g-purple-2: #070a10;
+  --g-purple-3: #0b1020;
+
+  --g-glass-1: rgba(243, 246, 255, 0.1);
+  --g-glass-2: rgba(243, 246, 255, 0.03);
+
+  --glow: rgba(34, 211, 238, 0.2);
+}
+
+/* ------------------------------------------------------------
+   BASE LAYER
+------------------------------------------------------------- */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ------------------------------------------------------------
+   GRADIENT UTILITIES
+   Use these as: class="bg-grad-midnight"
+   or "bg-grad-cyan", "bg-grad-purple", "bg-grad-glass"
+------------------------------------------------------------- */
+@layer utilities {
+  /* Full backgrounds */
+  .bg-grad-midnight {
+    background-image: linear-gradient(
+      135deg,
+      var(--g-midnight-1) 0%,
+      var(--g-midnight-2) 45%,
+      var(--g-midnight-3) 100%
+    );
+  }
+
+  .bg-grad-cyan {
+    background-image: linear-gradient(
+      135deg,
+      var(--g-cyan-1) 0%,
+      var(--g-cyan-2) 50%,
+      var(--g-cyan-3) 100%
+    );
+  }
+
+  .bg-grad-purple {
+    background-image: linear-gradient(
+      135deg,
+      var(--g-purple-1) 0%,
+      var(--g-purple-2) 50%,
+      var(--g-purple-3) 100%
+    );
+  }
+
+  /* Glass card gradient */
+  .bg-grad-glass {
+    background-image: linear-gradient(
+      145deg,
+      var(--g-glass-1),
+      var(--g-glass-2)
+    );
+  }
+
+  /* Optional glows (pair with relative + overflow-hidden) */
+  .glow-top-right {
+    background-image: radial-gradient(
+      circle at top right,
+      var(--glow),
+      transparent 60%
+    );
+  }
+
+  .glow-top-left {
+    background-image: radial-gradient(
+      circle at top left,
+      var(--glow),
+      transparent 60%
+    );
+  }
+
+  /* Nice combo helper: background + glow overlay */
+  .bg-hero {
+    background-image: radial-gradient(
+        circle at top right,
+        var(--glow),
+        transparent 55%
+      ),
+      linear-gradient(
+        135deg,
+        var(--g-midnight-1) 0%,
+        var(--g-midnight-2) 45%,
+        var(--g-midnight-3) 100%
+      );
+  }
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
