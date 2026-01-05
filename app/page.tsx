@@ -1,6 +1,8 @@
 import HeroSection from "@/components/home/HeroSection";
 import JobExperienceSection from "@/components/home/JobExperienceSection";
 import ProjectsSection from "@/components/home/ProjectsSection";
+import SkillsShowcaseA from "@/components/home/SkillsShowcaseA";
+import InViewFade from "@/components/common/InViewFade";
 
 export default function Home() {
   return (
@@ -12,9 +14,18 @@ export default function Home() {
         <span className="firework firework-4" />
         <span className="firework firework-5" />
       </div>
-      <HeroSection />
-      <ProjectsSection />
-      <JobExperienceSection />
+      <InViewFade>
+        <HeroSection />
+      </InViewFade>
+      <InViewFade>
+        <SkillsShowcaseA />
+      </InViewFade>
+      <InViewFade>
+        <ProjectsSection />
+      </InViewFade>
+      <InViewFade>
+        <JobExperienceSection />
+      </InViewFade>
     </div>
   );
 }

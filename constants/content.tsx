@@ -1,28 +1,3 @@
-import ReactIcon from "@/public/SkillsIcon/ReactIcon.png";
-import ReactNativeIcon from "@/public/SkillsIcon/reactnative.png";
-import NextIcon from "@/public/SkillsIcon/Next.png";
-import JavascriptIcon from "@/public/SkillsIcon/Javascript.png";
-import TypeScriptIcon from "@/public/SkillsIcon/typescript.png";
-import RectanglePhoto from "@/public/HomePage/Rectangle.png";
-import LernaLogo from "@/public/SkillsIcon/lerna-logo.png";
-import StorybookIcon from "@/public/SkillsIcon/storybook-icon.svg";
-import PwaIcon from "@/public/SkillsIcon/pwa.png";
-import SqlIcon from "@/public/SkillsIcon/sql-server.png";
-import MongodbIcon from "@/public/SkillsIcon/mongodb.png";
-import NodeIcon from "@/public/SkillsIcon/node.png";
-import NestIcon from "@/public/SkillsIcon/nest-icon.png";
-import expressIcon from "@/public/SkillsIcon/express.png";
-// import EmailIcon from "@mui/icons-material/Email";
-import { GithubIcon, LinkedinIcon, Mail, PhoneIcon } from 'lucide-react';
-
-// import PhoneIcon from "@mui/icons-material/Phone";
-import { Phone } from 'lucide-react';
-// import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { MapPin } from 'lucide-react';
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Linkedin } from 'lucide-react';
-// import GitHubIcon from "@mui/icons-material/GitHub";
-import { Github } from 'lucide-react';
 import SentraLogo from "@/public/Projects/SentraLogo.png";
 import AqersLogo from "@/public/Projects/AqersLogo.png";
 import BulkyLogo from "@/public/Projects/BulkyLogo.png";

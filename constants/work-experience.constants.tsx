@@ -234,18 +234,18 @@ export const SkillArrSecond: SkillArrType[] = [
 export const Socials: SocialArrType[] = [
     {
         id: 5000,
-        value: "usama.amjad32@gmail.com",
+        value: "bhatti.asad99@gmail.com",
         title: "Email",
         image: (
             <Mail
                 size={'24px'} />
         ),
-        link: "mailto:usama.amjad32@gmail.com",
+        link: "mailto:bhatti.asad99@gmail.com",
     },
 
     {
         id: 5001,
-        value: "+92 345 0538250",
+        value: "+92 334 8506479",
         title: "Phone",
         image: (
             <PhoneIcon
@@ -267,7 +267,7 @@ export const Socials: SocialArrType[] = [
     },
     {
         id: 5003,
-        value: "usama.amjad32@gmail.com",
+        value: "bhatti.asad99@gmail.com",
         title: "Linkedin",
         image: (
             <LinkedinIcon
@@ -278,7 +278,7 @@ export const Socials: SocialArrType[] = [
     },
     {
         id: 5004,
-        value: "usama.amjad32@gmail.com",
+        value: "bhatti.asad99@gmail.com",
         title: "Github",
         image: (
             <GithubIcon

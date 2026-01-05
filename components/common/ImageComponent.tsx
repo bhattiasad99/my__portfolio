@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { FC } from 'react'
 
-type IProps = {
-    source: string,
+export type IProps = {
+    source: string | StaticImageData,
     altText: string,
     width?: number,
     height?: number,
