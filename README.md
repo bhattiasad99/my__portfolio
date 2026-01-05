@@ -35,7 +35,8 @@ Notes:
 
 ## Next release bug list
 
-- add default job
-- sometimes some sections go missing because of inview
-- in header, add burger menu
-- Case studies etc for projects, read more does nothing
+- [ ] Set a default job selection on load
+- [ ] Fix occasional missing sections caused by in-view animations
+- [ ] Add a burger menu to the header for mobile
+- [ ] Add project case studies; "Read More" currently does nothing
+- [ ] Update projects based on latest experience
