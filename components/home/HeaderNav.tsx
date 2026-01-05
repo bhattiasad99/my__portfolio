@@ -19,7 +19,7 @@ const HeaderNav = () => {
           <LinkComponent to="/projects" className="transition-colors hover:text-foreground">
             Projects
           </LinkComponent>
-          <LinkComponent to="https://buildwithbhatti.hashnode.dev/" className="transition-colors hover:text-foreground" target="_blank" rel="noopener noreferrer">
+          <LinkComponent to="https://buildwithbhatti.hashnode.dev/" className="transition-colors hover:text-foreground" openInNewTab={true} rel="noopener noreferrer">
             My Blog
           </LinkComponent>
           <ToggleThemeButton />
