@@ -5,7 +5,11 @@ import { Check } from "lucide-react";
 
 const options = ["Consultation", "Frontend", "Backend", "Partnership"] as const;
 
-const InquiryTabs = () => {
+type InquiryTabsProps = {
+  name?: string;
+};
+
+const InquiryTabs = ({ name }: InquiryTabsProps) => {
   const [selected, setSelected] = useState<string[]>([]);
 
   const labels = useMemo(() => options, []);
@@ -18,6 +22,9 @@ const InquiryTabs = () => {
 
   return (
     <div className="flex flex-wrap gap-3">
+      {name ? (
+        <input type="hidden" name={name} value={selected.join(", ")} />
+      ) : null}
       {labels.map((label) => {
         const isActive = selected.includes(label);
         return (

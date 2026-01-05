@@ -1,16 +1,15 @@
-import FormField from "@/components/ui/FormField";
 import Pill from "@/components/ui/Pill";
 import SectionIntro from "@/components/ui/SectionIntro";
-import InquiryTabs from "@/components/home/InquiryTabs";
-import { HERO } from "@/constants/content";
+import ContactForm from "@/components/home/ContactForm";
+import { DATA } from "@/constants/content";
 
 const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="mt-20 overflow-hidden rounded-[2.5rem] border border-border bg-grad-midnight p-10 shadow-2xl md:p-14"
+      className="mt-16 overflow-hidden rounded-[2.5rem] border border-border bg-grad-midnight p-6 shadow-2xl sm:mt-20 sm:p-8 md:p-14"
     >
-      <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
         <div className="space-y-6">
           <SectionIntro
             eyebrow="Contact Us"
@@ -24,7 +23,7 @@ const ContactSection = () => {
                 Office
               </p>
               <p className="mt-2 text-sm font-semibold text-foreground">
-                {HERO.office}
+                {DATA.office}
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-card/80 p-4 shadow-sm backdrop-blur">
@@ -32,7 +31,7 @@ const ContactSection = () => {
                 Response Time
               </p>
               <p className="mt-2 text-sm font-semibold text-foreground">
-                {HERO.responseTime}
+                {DATA.responseTime}
               </p>
             </div>
           </div>
@@ -41,7 +40,7 @@ const ContactSection = () => {
               Call Window
             </p>
             <p className="mt-2 text-sm font-semibold text-foreground">
-              {HERO.callWindow}
+              {DATA.callWindow}
             </p>
           </div>
           <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-foreground/60">
@@ -51,36 +50,7 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <form className="space-y-4 rounded-[2rem] border border-border bg-card/80 p-6 shadow-xl backdrop-blur-md md:p-8">
-          <FormField label="Your Name">
-            <input
-              type="text"
-              placeholder="Full name"
-              className="w-full rounded-2xl border border-input bg-muted px-4 py-3 text-sm text-foreground shadow-inner focus:border-ring focus:outline-none"
-            />
-          </FormField>
-          <FormField label="Email Address">
-            <input
-              type="email"
-              placeholder="hello@example.com"
-              className="w-full rounded-2xl border border-input bg-muted px-4 py-3 text-sm text-foreground shadow-inner focus:border-ring focus:outline-none"
-            />
-          </FormField>
-          <InquiryTabs />
-          <FormField label="Project Notes">
-            <textarea
-              rows={4}
-              placeholder="Tell me about your goals, timeline, and budget range."
-              className="w-full rounded-2xl border border-input bg-muted px-4 py-3 text-sm text-foreground shadow-inner focus:border-ring focus:outline-none"
-            />
-          </FormField>
-          <button
-            type="submit"
-            className="w-full rounded-full bg-primary px-6 py-3 text-sm font-semibold text-background shadow-lg transition-transform hover:-translate-y-0.5"
-          >
-            Send inquiry
-          </button>
-        </form>
+        <ContactForm />
       </div>
     </section>
   );
