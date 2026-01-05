@@ -12,20 +12,6 @@ pnpm dev
 
 Open `http://localhost:3000`.
 
-## Contact form (Resend)
-
-Set the following environment variables in `.env.local`:
-
-```env
-RESEND_API_KEY=your_resend_key_here
-CONTACT_FROM_EMAIL=Portfolio <hello@yourdomain.com>
-CONTACT_TO_EMAIL=you@yourdomain.com
-```
-
-Notes:
-- `CONTACT_FROM_EMAIL` must be a verified sender in Resend.
-- Restart the dev server after adding `.env.local`.
-
 ## Project structure
 
 - `app/` Next.js app router pages and layout
